@@ -2,7 +2,7 @@
     <v-layout>
         <v-container>
             <v-row class="center-content">
-                <v-col cols="12" md="8" sm="12">
+                <v-col cols="12" md="10" sm="12">
                     <Header/>
                         <v-main class="main-content">
                             <slot name="content"></slot>
