@@ -3,6 +3,7 @@ backend/venv/
 backend/uploads/*.csv
 backend/uploads/*.xlsx
 backend/uploads/*.xls
+backend/pdfs/*.pdf
 
 frontend/.DS_Store
 frontend/node_modules
