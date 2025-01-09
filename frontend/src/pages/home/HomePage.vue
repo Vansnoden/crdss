@@ -61,6 +61,15 @@
 
 <script setup>;
 import StandardLayout from '@/layouts/StandardLayout.vue';
+import { useSystemStore } from '@/stores/stores';
+import { onMounted } from 'vue';
+
+const systemStore = useSystemStore();
+
+onMounted(() => {
+    document.title = `Home`;
+    systemStore.updateFavicon();
+})
 
 </script>
 
