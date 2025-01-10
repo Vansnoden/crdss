@@ -4,6 +4,9 @@ backend/uploads/*.csv
 backend/uploads/*.xlsx
 backend/uploads/*.xls
 backend/pdfs/*.pdf
+backend/json_extractions/*.json
+backend/text_extractions/*.txt
+/backend/utils/.env
 
 frontend/.DS_Store
 frontend/node_modules

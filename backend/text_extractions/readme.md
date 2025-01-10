@@ -1,0 +1,1 @@
+folder contains all the text extracted from downloaded pdfs
