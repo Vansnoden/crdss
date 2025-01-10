@@ -1,0 +1,64 @@
+Here's a structured extraction of knowledge triples from the provided text.  Note that some triples are implicit and require inference from the text's context.  The relationships are often not explicitly stated, so I've chosen appropriate semantic relationships based on the context.
+
+**Category: Crop Production & Characteristics**
+
+* (Potato, `has_moisture_content`, 80%)
+* (Potato, `has_starch_content`, 14.8%)
+* (Potato, `has_protein_content`, 2.3%)
+* (Potato, `has_yield`, 35 t/ha)
+* (Commercial Wheat, `has_moisture_content`, 12%)
+* (Commercial Wheat, `has_protein_content`, 10%)
+* (Commercial Wheat, `has_starch_content`, 60%)
+* (Commercial Wheat, `has_yield`, 5.5 t/ha)
+* (Galician Wheat, `has_moisture_content`, 12%)
+* (Galician Wheat, `has_protein_content`, 14%)
+* (Galician Wheat, `has_starch_content`, 58%)
+* (Galician Wheat, `has_yield`, 2.8 t/ha)
+* (Potato, `used_for`, Frying Industry)
+* (Commercial Wheat, `used_for`, Bread Production)
+* (Galician Wheat, `used_for`, Bread Production)
+* (Potato Residue, `used_for`, Animal Feed)
+* (Commercial Wheat Straw, `used_for`, Animal Feed)
+* (Galician Wheat Straw, `used_for`, Soil Amendment)
+* (Potato, `is_a`, Solanum tuberosum)
+* (Commercial Wheat, `is_a`, Triticum aestivum)
+* (Galician Wheat, `is_a`, Caaveiro)
+
+
+**Category: Crop Rotation & Environmental Impact**
+
+* (Crop Rotation, `improves`, Environmental Sustainability)
+* (Crop Rotation, `reduces`, use of Mineral Fertilizers)
+* (Crop Rotation, `reduces`, Pest and Disease Impact)
+* (Monoculture, `has_negative_impact`, Ecosystem Services)
+* (Galician Wheat, `has_lowest_impact`, Land Management)
+* (Potato, `has_highest_yield`, among crops studied)
+* (Crop Rotation, `compared_to`, Monoculture, `lower_environmental_impact`)
+* (Life Cycle Assessment (LCA), `used_for`, Evaluating Environmental Impacts)
+* (Potato-Wheat Crop Rotation, `located_in`, Galicia, Spain)
+* (Study, `used_methodology`, Life Cycle Assessment (LCA))
+* (Study, `used_functional_units`, kg⁻¹, ha⁻¹·year⁻¹, €/income, MJ⁻¹)
+* (Study, `analyzed_impact_categories`, Climate Change, Particulate Matter, Terrestrial Acidification, Freshwater Eutrophication, Marine Eutrophication, Human Toxicity, Land Use, Fossil Depletion)
+* (Wheat-Potato rotation, `releases`, 2431 kg CO2-eq/ha in 3 years)
+
+
+**Category: Study Methodology & Data**
+
+* (Study, `data_collected_via`, In situ interviews, Questionnaires)
+* (Study, `data_source`, Ecoinvent v3.5 database)
+* (Study, `allocation_method`, Economic Allocation)
+* (Study, `impact_assessment_method`, Recipe 1.12 Hierarchist Method)
+* (Study, `system_boundary`, Cradle-to-Farm)
+
+
+**Category: Authors & Funding**
+
+* (Iana Câmara-Salim, `authored`, Study)
+* (Fernando Almeida-García, `co-authored`, Study)
+* (Gumersindo Feijoo, `co-authored`, Study)
+* (Maria Teresa Moreira, `co-authored`, Study)
+* (Sara González-García, `co-authored`, Study)
+* (Study, `funded_by`, FEDER 2019/058, CerealMed project, Xunta de Galicia, PRIMA Programme, Ministry of Science and Innovation)
+
+
+This is not an exhaustive list, as many more triples could be derived, particularly relating to specific agricultural practices and their respective environmental impacts.  However, it provides a strong foundation for knowledge representation from the given text.

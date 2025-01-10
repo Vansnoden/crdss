@@ -5,7 +5,7 @@ import json, os, re, ast, time, math
 from typing import List
 from os.path import expanduser
 from tqdm import tqdm
-from utils.common import walkpath_get_files
+from common import walkpath_get_files
 from dotenv import load_dotenv
 
 load_dotenv()
