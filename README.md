@@ -82,3 +82,8 @@ All the extraction outputs can be found in <a href="/backend/json_extractions/">
 #### Prediction model
 
 The trained ai model is stored in the <a href="/backend/model/">/backend/model/</a>.
+
+
+#### Playground
+
+You can access a demo of the system <a href="http://144.91.86.137:3502/" target="_blank">here</a>.
