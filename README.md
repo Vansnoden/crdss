@@ -18,17 +18,10 @@ patter in order to maxime the overall yield.
     ```docker compose up -d```
     
     now the backend will be available and running at 
-    <a href="http://localhost:8000" target="_blank">http://localhost:8000</a>
+    <a href="http://localhost:8000/docs" target="_blank">http://localhost:8000/docs</a>
 
-3. Deploy the frontend
-  
-  * navigate to the frontend folder and run the following commands:
 
-    ```pnpm install```
-
-    ```pnpm run dev```
-  
-  the frontend should the be up and running at <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
+  * the frontend should the be up and running at <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
 
 
 #### Data collection

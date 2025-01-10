@@ -59,13 +59,13 @@ services:
       - POSTGRES_USERNAME=postgres
       - POSTGRES_PASSWORD=admin
 
-  # frontend:
-  #   build: ./frontend
-  #   depends_on:
-  #     - backend
-  #   container_name: frontend
-  #   ports:
-  #     - 3000:3000
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    container_name: frontend
+    ports:
+      - 3000:3000
 
 volumes:
   postgres-data:

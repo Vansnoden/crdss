@@ -1,35 +1,23 @@
-# Stage 1: Build the application
-FROM node:18-alpine as builder
+# Base image with Node.js
+FROM node:18-alpine
 
-# Set the working directory
+# Set working directory in the container
 WORKDIR /app
 
 # Install pnpm globally
 RUN npm install -g pnpm
 
-# Copy package.json and pnpm-lock.yaml files
+# Copy only package.json and pnpm-lock.yaml for caching dependencies
 COPY package.json pnpm-lock.yaml ./
 
 # Install dependencies using pnpm
 RUN pnpm install
 
-# Copy the entire application source code
+# Copy the entire project to the container
 COPY . .
 
-# Build the application
-RUN pnpm build
+# Expose the development server port (default Vite port: 5173)
+EXPOSE 3000
 
-# Stage 2: Serve the application
-FROM nginx:stable-alpine
-
-# Copy the built application from the builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Copy custom Nginx configuration (optional)
-# COPY nginx.conf /etc/nginx/nginx.conf
-
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start the development server
+CMD ["pnpm", "dev", "--host", "0.0.0.0"]
