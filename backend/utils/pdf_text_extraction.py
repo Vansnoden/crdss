@@ -174,7 +174,7 @@ def extract_pdf_text_from_folder(parent_path, extraction_path):
     files = None
     extension=".pdf"
     for (root,dirs,files) in os.walk(parent_path, topdown=True):
-        for file in tqdm(files[:1], position=0, leave=True):
+        for file in tqdm(files, position=0, leave=True):
             if file.endswith(extension):
                 extract_pdf_text(os.path.join(parent_path, file), output_folder=extraction_path)
     return res
