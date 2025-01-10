@@ -54,7 +54,10 @@ import { ref } from 'vue';
 import { AUTH_URL } from '../constants';
 import { deleteCookie, setCookie } from '@/plugins/cookies';
 import { useRoute, useRouter } from "vue-router";
+import { onMounted } from 'vue';
+import { useSystemStore } from '@/stores/stores';
 
+const systemStore = useSystemStore();
 const route = useRoute();
 const router = useRouter();
 const show = ref(false);
@@ -98,6 +101,11 @@ const loginUser = async ()=>{
         })
     }
 }
+
+onMounted(()=>{
+    document.title = `Log In`;
+    systemStore.updateFavicon();
+})
 </script>
 
 <style scoped lang="scss">

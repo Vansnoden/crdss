@@ -10,12 +10,14 @@ import { createRouter, createWebHistory } from 'vue-router/auto';
 import HomePage from '@/pages/home/HomePage.vue';
 import LoginForm from '@/components/auth/LoginForm.vue';
 import { isAuthenticated } from '@/plugins/auth';
+import PredictionPage from '@/pages/prediction/PredictionPage.vue';
 // import { routes } from 'vue-router/auto-routes'
 
 
 const routes = [
   { path: '/', name:'home', component: HomePage},
   { path: '/auth/login', name:'login', component: LoginForm },
+  { path: '/prediction', name:'prediction', component: PredictionPage },
 ]
 
 

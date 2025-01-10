@@ -50,7 +50,7 @@
                 </v-row>
                 <v-row>
                     <v-col cols="12" md="12" sm="12" class="center-content mt-4">
-                        <v-btn primary>make prediction</v-btn>
+                        <v-btn primary @click="goToPrediction()">make prediction</v-btn>
                     </v-col>
                 </v-row>
             </v-container>
@@ -63,8 +63,15 @@
 import StandardLayout from '@/layouts/StandardLayout.vue';
 import { useSystemStore } from '@/stores/stores';
 import { onMounted } from 'vue';
+import { useRoute, useRouter } from "vue-router";
 
+
+const route = useRoute();
+const router = useRouter();
 const systemStore = useSystemStore();
+const goToPrediction = () => {
+    router.push('/prediction');
+}
 
 onMounted(() => {
     document.title = `Home`;
