@@ -11,9 +11,15 @@ patter in order to maxime the overall yield.
 1. Requirements
   * Docker installed locally : <a href="https://docs.docker.com/engine/install/" target="_blank"> Click here for mode details </a>
   * Node Js and NPM installed locally: <a href="https://nodejs.org/en/download"  target="_blank"> Click here for more details </a>
+  * Google gemini API key: <a href="https://ai.google.dev/gemini-api/docs/api-key"  target="_blank"> Click here for more details </a>
+  
+    edit the environment file found at <a href="/backend/utils/.env.template">/backend/utils/.env.template</a>, change the file name
+    from ```.env.template``` to ```.env```</a> and replace it content by providing your personal API KEY.
 2. Deploy the backend
 
-  * run the following command at the root the the project
+  * run the following command at the root the the project:
+
+    ```docker compose build```
 
     ```docker compose up -d```
     
@@ -73,3 +79,6 @@ To perfom this action you can run the following command:
 All the extraction outputs can be found in <a href="/backend/json_extractions/">/backend/json_extractions/</a>
 
   
+#### Prediction model
+
+The trained ai model is stored in the <a href="/backend/model/">/backend/model/</a>.
