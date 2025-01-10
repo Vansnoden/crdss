@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { getCookie } from '@/plugins/cookies';
+import { PREDICTION_URL } from '@/components/constants';
 
 
 
@@ -21,4 +22,40 @@ export const useSystemStore = defineStore('system', {
             link.href = this.favicon_url;
         }
     }
+})
+
+
+export const userPredictionStore = defineStore('prediction', {
+    state: () => ({
+        prediction: [],
+        loading: true
+    }),
+    getters: {
+        isLoading: (state) => state.loading,
+        getPrediction: (state) => state.prediction
+    },
+    actions: {
+        async pullPrediction (crops, country, region, startYear, endYear){
+            const data = JSON.stringify({
+                "crops": ""+crops,
+                "country": ""+country,
+                "region": ""+region,
+                "startYear": ""+startYear,
+                "endYear": ""+endYear
+            })
+            console.log(data);
+
+            const response = await fetch(PREDICTION_URL, {
+                method: 'POST',
+                headers: {
+                    "Authorization": getCookie("token"),
+                    "Content-type": "application/json"
+                },
+                body: data
+            })
+            const res = await response.json();
+            this.prediction = res.data;
+        }
+    }
+
 })

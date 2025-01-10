@@ -2,10 +2,10 @@ from datetime import timedelta, timezone, datetime
 import math
 import os, json, time
 from pathlib import Path
-from typing import Annotated, List
+from typing import Annotated, List, Optional
 from utils.common import walkpath_get_files, excel_to_csv, get_uuid
 
-from fastapi import Depends, FastAPI, HTTPException, status, File, UploadFile
+from fastapi import Depends, FastAPI, HTTPException, status, File, UploadFile, Body
 from fastapi.security import OAuth2PasswordBearer
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import UUID4, BaseModel
@@ -227,3 +227,45 @@ async def delete_user(user: Annotated[User, Depends(get_current_active_user)], d
 async def assign_user_role(user_id: str, role_id: str, db: Session = Depends(get_db)):
     user = crud.assign_user_role(db, user_id, role_id)
     return user
+
+
+@app.post("/predict")
+async def predict_most_suitable_rotation(
+    user: Annotated[User, Depends(get_current_active_user)], 
+    db: Session = Depends(get_db),
+    body: Optional[dict] = Body(None)):
+    if user:
+        response = {}
+        response_test = {
+            "data": [
+                {
+                "year": 2020,
+                "crop": "Potatoes",
+                "description": "Plant potatoes as the primary crop."
+                },
+                {
+                "year": 2021,
+                "crop": "Legumes (e.g., Beans, Peas)",
+                "description": "Grow nitrogen-fixing legumes to replenish soil nutrients."
+                },
+                {
+                "year": 2022,
+                "crop": "Leafy Vegetables (e.g., Lettuce, Spinach)",
+                "description": "Introduce crops with different nutrient requirements and pest resistance."
+                },
+                {
+                "year": 2023,
+                "crop": "Cereals (e.g., Wheat, Barley)",
+                "description": "Grow cereals to reduce the risk of disease and manage soil structure."
+                },
+                {
+                "year": 2024,
+                "crop": "Cover Crops (e.g., Clover, Rye)",
+                "description": "Plant cover crops to prevent soil erosion and improve organic matter."
+                }
+            ]
+        }
+        # print(f"REQUEST DATA: {body}")
+        return response_test
+    else:
+        raise HTTPException(status_code=403, detail="Unauthorized action")
