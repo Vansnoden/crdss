@@ -106,5 +106,5 @@ def extract_from_folder(parent_folder:str):
 
 
 if __name__ == '__main__':
-    parent_folder = "../json_extraction"
+    parent_folder = "../text_extractions"
     res = extract_from_folder(parent_folder)
