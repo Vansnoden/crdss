@@ -1,5 +1,6 @@
 from datetime import timedelta, timezone, datetime
 import math
+import random
 import os, json, time
 from pathlib import Path
 from typing import Annotated, List, Optional
@@ -236,35 +237,18 @@ async def predict_most_suitable_rotation(
     body: Optional[dict] = Body(None)):
     if user:
         response = {}
-        response_test = {
-            "data": [
-                {
-                "year": 2020,
-                "crop": "Potatoes",
-                "description": "Plant potatoes as the primary crop."
-                },
-                {
-                "year": 2021,
-                "crop": "Legumes (e.g., Beans, Peas)",
-                "description": "Grow nitrogen-fixing legumes to replenish soil nutrients."
-                },
-                {
-                "year": 2022,
-                "crop": "Leafy Vegetables (e.g., Lettuce, Spinach)",
-                "description": "Introduce crops with different nutrient requirements and pest resistance."
-                },
-                {
-                "year": 2023,
-                "crop": "Cereals (e.g., Wheat, Barley)",
-                "description": "Grow cereals to reduce the risk of disease and manage soil structure."
-                },
-                {
-                "year": 2024,
-                "crop": "Cover Crops (e.g., Clover, Rye)",
-                "description": "Plant cover crops to prevent soil erosion and improve organic matter."
-                }
-            ]
-        }
+        response_test = {"data": []}
+        startYear = int(body['startYear'])
+        endYear = int(body['endYear'])
+        crops = body['crops'].strip().split(',')
+        for i in list(range(startYear, endYear +1)):
+            random.shuffle(crops)
+            row = {
+                "year": i,
+                "optimal crop rotation scheme": " --> ".join(crops),
+            }
+            response_test["data"].append(row)
+        # res = model.predict(inputs)
         # print(f"REQUEST DATA: {body}")
         return response_test
     else:
