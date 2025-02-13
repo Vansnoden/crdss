@@ -52,13 +52,19 @@
                 </v-row>
                 <v-row>
                     <v-col cols="12" md="6" sm="12">
-                        <v-btn @click="submitInputs()">get rotation plan</v-btn>
+                        <v-btn @click="submitInputs()" color="primary">get rotation plan</v-btn>
+                    </v-col>
+                    <v-col cols="12" md="6" sm="12">
+                        <v-btn @click="reset()" color="warning">Reset</v-btn>
                     </v-col>
                 </v-row>
                 <v-divider class="mb-3 mt-4"></v-divider>
                 <v-row>
-                    <v-col>
+                    <v-col v-if="predictionStore.getPrediction">
                         <v-data-table :items="predictionStore.getPrediction"></v-data-table>
+                    </v-col>
+                    <v-col v-else>
+                        Computing ...
                     </v-col>
                 </v-row>
                 <v-row v-if="errors" class="errors center-content">

@@ -50,7 +50,7 @@
                 </v-row>
                 <v-row>
                     <v-col cols="12" md="12" sm="12" class="center-content mt-4">
-                        <v-btn primary @click="goToPrediction()">make prediction</v-btn>
+                        <v-btn primary @click="goToPrediction()" color="primary">make prediction</v-btn>
                     </v-col>
                 </v-row>
             </v-container>

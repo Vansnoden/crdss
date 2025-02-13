@@ -249,6 +249,7 @@ async def predict_most_suitable_rotation(
             }
             response_test["data"].append(row)
         # res = model.predict(inputs)
+        time.sleep(10)
         # print(f"REQUEST DATA: {body}")
         return response_test
     else:
