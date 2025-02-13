@@ -23,7 +23,7 @@
                 </v-row>
                 <v-row>
                     <v-col cols="12" md="6" sm="12">
-                        <span class="secHeader">Configure time</span>
+                        <span class="secHeader">Configure Period</span>
                         <div class="customInput">
                             <label for="start_date">Start Date</label>
                             <input v-model="startDate" type="date" id="start_date" name="start_date" required="true">
