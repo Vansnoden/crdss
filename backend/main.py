@@ -245,7 +245,7 @@ async def predict_most_suitable_rotation(
             random.shuffle(crops)
             row = {
                 "year": i,
-                "optimal crop rotation scheme": ", ".join(crops),
+                "optimal crop rotation scheme": " --> ".join(crops),
             }
             response_test["data"].append(row)
         # res = model.predict(inputs)
