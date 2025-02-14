@@ -35,11 +35,11 @@ export const userPredictionStore = defineStore('prediction', {
         getPrediction: (state) => state.prediction
     },
     actions: {
-        async pullPrediction (crops, country, region, startYear, endYear){
+        async pullPrediction (crops, lat, lon, startYear, endYear){
             const data = JSON.stringify({
                 "crops": ""+crops,
-                "country": ""+country,
-                "region": ""+region,
+                "lat": ""+lat,
+                "lon": ""+lon,
                 "startYear": ""+startYear,
                 "endYear": ""+endYear
             })

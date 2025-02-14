@@ -236,20 +236,37 @@ async def predict_most_suitable_rotation(
     db: Session = Depends(get_db),
     body: Optional[dict] = Body(None)):
     if user:
+        # print(body)
         response = {}
+        base = json.load(open(".data.json", "r"))
         response_test = {"data": []}
         startYear = int(body['startYear'])
         endYear = int(body['endYear'])
         crops = body['crops'].strip().split(',')
+        crops.append("Potatoe")
         for i in list(range(startYear, endYear +1)):
             random.shuffle(crops)
+            types = []
+            for item in crops:
+                if item != "Potatoe":
+                    if item in base["crops"]["Cover crops"] and "Cover crops" not in types:
+                        types.append(f"Cover crops")
+                    elif item in base["crops"]["Legume"] and "Legume" not in types:
+                        types.append(f"Legume")
+                    elif item in base["crops"]["Cereal crops"] and "Cereal crops" not in types:
+                        types.append(f"Cereal crops")
+                    elif item in base["crops"]["Grasses"] and "Grasses" not in types:
+                        types.append(f"Grasses")
+                else:
+                    types.append(item)
             row = {
                 "year": i,
                 "optimal crop rotation scheme": " --> ".join(crops),
+                "Description": " --> ".join(types)
             }
             response_test["data"].append(row)
         # res = model.predict(inputs)
-        time.sleep(10)
+        time.sleep(5)
         # print(f"REQUEST DATA: {body}")
         return response_test
     else:

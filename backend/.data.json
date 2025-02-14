@@ -1,0 +1,85 @@
+{
+    "crops":{
+        "Cover crops":[
+            "Clover", 
+            "Alfalfa", 
+            "Vetch", 
+            "Field Peas", 
+            "Lupins", 
+            "Soybeans", 
+            "Rye (Cereal Rye)", 
+            "Oats", 
+            "Barley", 
+            "Wheat", 
+            "Millet"
+        ],
+        "Legume":[
+            "Alfalfa", 
+            "Vetch", 
+            "Lentils", 
+            "Chickpeas", 
+            "Beans", 
+            "Fava Beans", 
+            "Mung Beans", 
+            "Peas", 
+            "Clover", 
+            "Birdsfoot Trefoil", 
+            "Lespedeza", 
+            "Sunn Hemp"
+        ],
+        "Cereal crops":[
+            "Barley", 
+            "Oats", 
+            "Rye (Cereal Rye)", 
+            "Wheat", 
+            "Triticale", 
+            "Sorghum", 
+            "Pearl Millet"
+        ],
+        "Grasses":[
+            "Timothy Grass", 
+            "Bermudagrass", 
+            "Orchard Grass", 
+            "Bromegrass", 
+            "Fescue", 
+            "Oats", 
+            "Rye", 
+            "Triticale", 
+            "Millet", 
+            "Sorghum-Sudangrass Hybrid"
+        ]
+    },
+    "common_pests":{
+        "Insects":[
+            "Colorado Potato Beetle",
+            "Potato Tuber Moth",
+            "Wireworms",
+            "Aphids",
+            "Leafhoppers",
+            "Flea Beetles",
+            "Cutworms",
+            "White Grubs",
+            "Armyworms",
+            "Blister Beetles",
+            "Psyllids",
+            "Stink Bugs",
+            "Thrips"
+        ],
+        "Nematodes":[
+            "Potato Cyst Nematodes",
+            "Root Knot Nematodes",
+            "Lesion Nematodes",
+            "Stubby Root Nematodes"
+        ],
+        "Mites":[
+            "Two-Spotted Spider Mite",
+            "Broad Mites",
+            "Russet Mites"
+        ],
+        "Rodents":[
+            "Voles",
+            "Gophers",
+            "Field Mice"
+        ]
+    }
+}
