@@ -130,6 +130,7 @@ const reset = () => {
     latitude.value = 0;
     valid.value = false;
     errors.value = false;
+    predictionStore.resetPredictions()
 }
 
 

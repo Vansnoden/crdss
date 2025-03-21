@@ -32,7 +32,7 @@ export const userPredictionStore = defineStore('prediction', {
     }),
     getters: {
         isLoading: (state) => state.loading,
-        getPrediction: (state) => state.prediction
+        getPrediction: (state) => state.prediction,
     },
     actions: {
         async pullPrediction (crops, lat, lon, startYear, endYear){
@@ -55,6 +55,9 @@ export const userPredictionStore = defineStore('prediction', {
             })
             const res = await response.json();
             this.prediction = res.data;
+        },
+        resetPredictions(){
+            this.prediction = []
         }
     }
 
